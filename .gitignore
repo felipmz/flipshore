@@ -1,0 +1,18 @@
+# --- Dependências (Ignora em qualquer nível) ---
+node_modules/
+*/node_modules/
+
+# --- Build e Produção ---
+dist/
+build/
+frontend/dist/
+
+# --- Segurança e Sistema ---
+.env
+.DS_Store
+
+# --- Backend Uploads ---
+# Ignora todos os arquivos dentro da pasta uploads...
+backend/uploads/*
+# ...Exceto o arquivo .gitkeep (para garantir que a pasta vazia suba)
+!backend/uploads/.gitkeep

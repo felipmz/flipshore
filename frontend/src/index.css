@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #0f172a; /* Cor Debian Dark */
+    color: white;
+}
+/* === ANIMAÇÃO DE TEXTO GRADIENTE === */
+
+/* Definindo como o fundo se move */
+@keyframes moverGradiente {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.texto-gradiente-animado {
+  /* Criamos um gradiente maior: Azul -> Verde -> Azul novamente.
+     Isso permite um loop perfeito sem cortes bruscos.
+     Cores aproximadas do Tailwind: blue-400 (#60a5fa) e green-400 (#4ade80)
+  */
+  background-image: linear-gradient(to right, #60a5fa, #4ade80, #60a5fa);
+  
+  /* O PULO DO GATO: O fundo é 200% o tamanho do texto */
+  background-size: 200% auto;
+  
+  /* Aplica o fundo apenas no formato das letras */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  
+  /* A animação: nome, duração (lenta), suavidade, repetição infinita */
+  animation: moverGradiente 8s ease infinite;
+  
+  /* Opcional: Um brilho muito sutil para dar um "pop" tecnológico */
+  filter: drop-shadow(0 0 2rem rgba(96, 165, 250, 0.3));
+}
+
+/* =========================================
+   MOLDURA DO QR CODE ANIMADA
+   ========================================= */
+
+/* A caixa externa que contém o gradiente animado */
+.qrcode-frame-animado {
+  /* Usa o mesmo gradiente e animação do título */
+  background-image: linear-gradient(to right, #60a5fa, #4ade80, #60a5fa);
+  background-size: 200% auto;
+  animation: fluirGradiente 6s ease infinite;
+  
+  /* Define a "grossura" da borda animada */
+  padding: 5px; 
+  
+  /* Arredondamento da borda externa */
+  border-radius: 24px; 
+  
+  /* Um brilho suave para destacar (Cyberpunk style) */
+  box-shadow: 0 0 25px rgba(96, 165, 250, 0.3);
+  
+  /* Centraliza o conteúdo interno */
+  display: inline-flex; /* Ou 'flex' dependendo do layout, 'inline-flex' ajusta ao tamanho do conteúdo */
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto; /* Espaçamento acima e abaixo, centralizado horizontalmente */
+}
+
+/* A caixa interna sólida onde o QR code realmente senta */
+.qrcode-bg-solido {
+  /* Fundo branco para garantir que o QR code seja escaneável */
+  background-color: #ffffff; 
+  /* Se preferir um tema escuro total, use um cinza bem claro: #f1f5f9 */
+  
+  padding: 16px; /* Espaço branco em volta do QR code */
+  border-radius: 20px; /* Um pouco menos arredondado que a externa para encaixar */
+  
+  /* Garante que não haja nada vazando */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
