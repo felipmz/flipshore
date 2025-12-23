@@ -36,4 +36,4 @@ O projeto utiliza uma estrutura organizada separando as responsabilidades:
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/SEU-USUARIO/flipshore.git](https://github.com/SEU-USUARIO/flipshore.git)
+   git clone git@github.com:felipmz/flipshore.git
